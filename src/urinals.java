@@ -44,7 +44,7 @@ public class urinals {
             return keyboard();
         }
         else if(string.equals("2")){
-            return optFile("src/urinal.dat");
+            return File("src/urinal.dat");
         }
         return "Choose 1 or 2";
     }
@@ -63,7 +63,7 @@ public class urinals {
     }
 
 
-    public static String optFile(String path) throws Exception {
+    public static String File(String path) throws Exception {
         try{
             File file = new File(path);
             if(file.length()==0)
@@ -77,12 +77,12 @@ public class urinals {
                 while((string = reader.readLine())!=null){
                     counter.add(getUrinals(string));
                 }
-                for(int i=0;i< counter.size();i++){
-                    System.out.println(counter.get(i));
+                for (Integer value : counter) {
+                    System.out.println(value);
                 }
-                String str = "";
-                for(int i=0;i<counter.size();i++){
-                    str+=" "+counter.get(i);
+                StringBuilder str = new StringBuilder();
+                for (Integer value : counter) {
+                    str.append(" ").append(value);
                 }
                 reader.close();
                 File rule = new File("src/rule.txt");
@@ -92,11 +92,11 @@ public class urinals {
                     buff++;
                 }
                 FileWriter writer = new FileWriter(rule);
-                for(int i=0;i<counter.size();i++){
-                    writer.write(counter.get(i)+"\n");
+                for (Integer integer : counter) {
+                    writer.write(integer + "\n");
                 }
                 writer.close();
-                return str;
+                return str.toString();
             }
 
         }

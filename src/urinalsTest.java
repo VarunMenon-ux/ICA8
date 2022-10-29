@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,4 +19,20 @@ class urinalsTest {
 
 
 
+    @Test
+    void validate() {
+
+        assertEquals(true, urinals.validate("101"));
+        assertEquals(true, urinals.validate("1001"));
+        assertEquals(true, urinals.validate("0"));
+        assertEquals(true, urinals.validate("0100"));
+        assertEquals(true, urinals.validate("10"));
+        assertEquals(true, urinals.validate("10000"));
+        assertEquals(false, urinals.validate("1234"));
+        assertEquals(false, urinals.validate("!@#$"));
+        assertEquals(false, urinals.validate("01101101@#$"));
+        assertEquals(false, urinals.validate("abcd"));
+        assertEquals(false, urinals.validate("111111111111111111111111111110000000"));
+        System.out.println("====== Varun Menon == TEST TWO EXECUTED =======");
+    }
 }
