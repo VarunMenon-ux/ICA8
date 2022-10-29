@@ -51,4 +51,28 @@ class urinalsTest {
     }
 
 
+    @Test
+    void validateConsecutive1s() {
+
+        assertEquals(true, urinals.validate("101"));
+        assertEquals(true, urinals.validate("1001"));
+        assertEquals(true, urinals.validate("0"));
+        assertEquals(true, urinals.validate("0100"));
+        assertEquals(true, urinals.validate("10"));
+        assertEquals(true, urinals.validate("10000"));
+        assertEquals(false, urinals.validate("11"));
+        assertEquals(false, urinals.validate("10001100110000"));
+        assertEquals(false, urinals.validate("100010001011"));
+        assertEquals(false, urinals.validate("1011"));
+        System.out.println("====== Varun Menon == TEST FOUR EXECUTED =======");
+    }
+
+
+    @Test
+    void getInput() throws Exception {
+        assertEquals("0 1 0 0 3 -1 -1", urinals.getInput("src/urinal.dat"));
+        assertEquals(null, urinals.getInput("src/urinals.dat"));
+        System.out.println("====== Varun Menon == TEST FIVE EXECUTED =======");
+
+    }
 }
