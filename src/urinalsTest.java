@@ -69,9 +69,8 @@ class urinalsTest {
 
 
     @Test
-    void getInput() throws Exception {
-        assertEquals("0 1 0 0 3 -1 -1", urinals.getInput("src/urinal.dat"));
-        assertEquals(null, urinals.getInput("src/urinals.dat"));
+    void File() throws Exception {
+        assertEquals(" 0 1 0 0 3 -1 -1", urinals.File("src/urinal.dat"));
         System.out.println("====== Varun Menon == TEST FIVE EXECUTED =======");
 
     }
