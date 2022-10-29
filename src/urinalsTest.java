@@ -20,7 +20,7 @@ class urinalsTest {
 
 
     @Test
-    void validate() {
+    void validateStrChars() {
 
         assertEquals(true, urinals.validate("101"));
         assertEquals(true, urinals.validate("1001"));
@@ -32,7 +32,23 @@ class urinalsTest {
         assertEquals(false, urinals.validate("!@#$"));
         assertEquals(false, urinals.validate("01101101@#$"));
         assertEquals(false, urinals.validate("abcd"));
-        assertEquals(false, urinals.validate("111111111111111111111111111110000000"));
         System.out.println("====== Varun Menon == TEST TWO EXECUTED =======");
     }
+
+
+    @Test
+    void validateStrLen() {
+
+        assertEquals(true, urinals.validate("101"));
+        assertEquals(true, urinals.validate("1001"));
+        assertEquals(true, urinals.validate("0"));
+        assertEquals(true, urinals.validate("0100"));
+        assertEquals(true, urinals.validate("10"));
+        assertEquals(true, urinals.validate("10000"));
+        assertEquals(false, urinals.validate(""));
+        assertEquals(false, urinals.validate("10001010100001001000000010100000100"));
+        System.out.println("====== Varun Menon == TEST THREE EXECUTED =======");
+    }
+
+
 }

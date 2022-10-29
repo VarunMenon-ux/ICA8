@@ -27,7 +27,8 @@ public class urinals {
 
 
     public static boolean validate(String string){
-        if (string.length() == 0 && string.length()>20) return false;
+        if (string.length()>20) return false;
+        if (string.length()<1) return false;
         if (string.contains("11")) return false;
         char[] valid = string.toCharArray();
         for (int i = 0; i < valid.length - 1; i++){
